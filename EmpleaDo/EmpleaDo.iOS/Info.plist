@@ -34,5 +34,14 @@
     <string>EmpleaDo</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+
+
+
+    <key>UIAppFonts</key>
+    <array>
+      <string>fa-brands-400.ttf</string>
+      <string>fa-regular-400.ttf</string>
+      <string>fa-solid-900.ttf</string>
+    </array>
 </dict>
 </plist>

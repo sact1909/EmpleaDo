@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EmpleaDo.Views.Dashboard"
+             BackgroundColor="#F8F9FA"
+             xmlns:Local="clr-namespace:EmpleaDo.ViewModels"
+             >
+    <ContentPage.BindingContext>
+        <Local:DashboardViewModel />
+    </ContentPage.BindingContext>
+    <Shell.TitleView>
+        <Image>
+            <Image.Source>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="&#xf0c0;"/>
+            </Image.Source>
+        </Image>
+    </Shell.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView SeparatorVisibility="None" ItemsSource="{Binding Jobss}" HasUnevenRows="True" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Visual="Material" Margin="10,5,10,5" Padding="10">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="" NumberOfTapsRequired="1" />
+                                </Frame.GestureRecognizers>
+                                <Grid BackgroundColor="White"  Padding="0" Margin="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+
+
+                                    <!--<Frame Grid.Column="0" CornerRadius="100"
+                                           WidthRequest="100"
+                                           HeightRequest="100"
+                                           HorizontalOptions="Center"
+                                           Padding="0"
+                                           IsClippedToBounds="True">
+                                        <Image Source="{Binding CompanyLogoValidation}"
+                                                Aspect="AspectFill"
+                                                 Margin="30"
+                                                 HeightRequest="130"
+                                                 WidthRequest="130"
+                                                 />
+                                    </Frame>-->
+
+                                    <Frame Margin="0" Grid.Column="0"
+                                           BorderColor="Silver"
+                                           CornerRadius="50"
+                                           HeightRequest="60"
+                                           WidthRequest="60"
+                                           IsClippedToBounds="True"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center">
+                                        <Image Source="{Binding CompanyLogoValidation}"
+                                                 Aspect="AspectFill"
+                                                 Margin="-20"
+                                                 HeightRequest="100"
+                                                 WidthRequest="100" />
+                                    </Frame>
+
+                                    <Grid Grid.Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Text="{Binding CompanyName}" 
+                                           TextColor="Black"
+                                           FontAttributes="Bold"
+                                           FontSize="18"
+                                       Margin="5,0,0,0"/>
+                                        <Label Grid.Row="1" Text="{Binding Title}"
+                                       TextColor="#AAAAAA"
+                                       FontSize="15"
+                                       Margin="5,0,0,0"
+                                       Padding="0"
+                                           />
+                                        <AbsoluteLayout Grid.Row="2" Grid.Column="0" >
+                                            <Frame 
+                                                BackgroundColor="White" 
+                                                CornerRadius="10" Padding="10,2,10,2"
+                                                HasShadow="False"
+                                                BorderColor="#6ECF26"
+                                                >
+                                                <Label Text="{Binding Romote}" TextColor="#6ECF26"/>
+                                            </Frame>
+                                        </AbsoluteLayout>
+                                        
+
+                                    </Grid>
+
+                                    <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#F8F8F8" Visual="Material"
+                                       Margin="10">
+                                        <StackLayout>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Grid.Row="0" Grid.Column="0" 
+                                                   Text="&#xf3c5;"
+                                                   FontFamily="{StaticResource FontAwesomeSolid}"
+                                                   Margin="0"
+                                                   Padding="0" VerticalOptions="Center"/>
+                                                <Label Grid.Row="0" Grid.Column="1"
+                                                   Text="{Binding Location}"
+                                                   Margin="0"
+                                                   Padding="0" VerticalOptions="Center"/>
+
+                                                <Label Grid.Row="1" Grid.Column="0" 
+                                                   Text="&#xf073;"
+                                                   FontFamily="{StaticResource FontAwesomeRegular}"
+                                                   Margin="0"
+                                                   Padding="0" VerticalOptions="Center"/>
+                                                <Label Grid.Row="1" Grid.Column="1"
+                                                   Text="{Binding PublishedDate}"
+                                                   Margin="0"
+                                                   Padding="0" VerticalOptions="Center"/>
+
+                                                
+
+                                                <StackLayout Grid.Column="0" 
+                                                             Grid.Row="2"
+                                                             Grid.ColumnSpan="2"
+                                                             Spacing="1" 
+                                                             Orientation="Horizontal">
+                                                    <Label 
+                                                   Text="&#xf06e;"
+                                                   FontFamily="{StaticResource FontAwesomeRegular}"
+                                                   Margin="0"
+                                                   Padding="0" VerticalOptions="Center"/>
+                                                    
+                                                    <Label 
+                                                   Text="{Binding ViewCount}"
+                                                   Margin="0"
+                                                   Padding="0" VerticalOptions="Center"/>
+
+                                                    <Label Text=" | "/>
+
+                                                    <Label  
+                                                   Text="&#xf164;"
+                                                   FontFamily="{StaticResource FontAwesomeRegular}"
+                                                   Margin="0"
+                                                   Padding="0" VerticalOptions="Center"/>
+                                                    
+                                                    <Label 
+                                                   Text="{Binding ViewCount}"
+                                                   Margin="0"
+                                                   Padding="0" VerticalOptions="Center"/>
+                                                </StackLayout>
+
+                                                
+
+                                            </Grid>
+                                        </StackLayout>
+                                    </Frame>
+
+                                    <Button Grid.Row="2"  
+                                            Grid.Column="0" 
+                                            Grid.ColumnSpan="2" 
+                                            Text="Ver Mas" 
+                                            BackgroundColor="#0F858D" 
+                                            TextColor="White"
+                                            Margin="10,0,10,0"/>
+                                </Grid>
+                            </Frame>
+
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

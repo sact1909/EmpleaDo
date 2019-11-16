@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Views="clr-namespace:EmpleaDo.Views;assembly=EmpleaDo"
+             mc:Ignorable="d"
+             x:Class="EmpleaDo.MainShell"
+             BackgroundColor="#14B1BB"
+             TitleColor="#000000"
+             FlyoutBehavior="Disabled"
+             Shell.TabBarBackgroundColor="White"
+             Shell.TabBarForegroundColor="#14B1BB"
+             Shell.TabBarUnselectedColor="#495057"
+             Shell.TabBarTitleColor="#14B1BB"
+            >
+    
+    <TabBar>
+        <Tab Title="Trabajos" >
+            <Tab.Icon>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeSolid}" Glyph="&#xf3fd;"/>
+            </Tab.Icon>
+            <ShellContent>
+                <Views:Dashboard/>
+            </ShellContent>
+        </Tab>
+        
+        <Tab Title="Perfil" >
+            <Tab.Icon>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeRegular}" Glyph="&#xf2bb;"/>
+            </Tab.Icon>
+            <ShellContent>
+                <Views:Profile/>
+            </ShellContent>
+        </Tab>
+    </TabBar>
+    
+</Shell>
